@@ -101,7 +101,7 @@ h2 {
     @supports (backdrop-filter: blur(16px)) {
         .primary-nav {
             background: hsl(0, 0%, 100% / 0.1);
-            backdrop-filter: blur(16px);
+            backdrop-filter: blur(16px) contrast(100%);
         }
     }
 
