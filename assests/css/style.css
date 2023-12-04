@@ -102,6 +102,7 @@ h2 {
         .primary-nav {
             background: hsl(0, 0%, 100% / 0.1);
             backdrop-filter: blur(16px) contrast(100%);
+            -webkit-backdrop-filter: blur(16px) contrast(100%);
         }
     }
 
