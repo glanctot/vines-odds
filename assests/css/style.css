@@ -1,0 +1,93 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow-x: hidden;
+}
+
+:root {
+    --primary-color: black;
+    --secondary-color: white;
+}
+
+header {
+    padding: 20px 35px;
+    background-color: var(--primary-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    top: 0;
+    z-index: 9999;
+}
+
+header a {
+    text-decoration: none;
+    color: var(--secondary-color);
+}
+
+.mobile-nav-toggle {
+    display: none;
+}
+
+.primary-nav {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.primary-nav li a {
+    font-size: 30px;
+    padding: 0 10px;
+    text-decoration: none;
+    color: var(--secondary-color);
+}
+
+section {
+    color: var(--secondary-color);
+    height: 100vh;
+    background-image: url("../images/plants.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+@media (max-width: 560px) {
+    .primary-nav {
+        position: fixed;
+        z-index: 1000;
+        inset: 0 0 0 40%;
+        flex-direction: column;
+        padding: min(10vh, 100px) 32px;
+        background: hsl(0, 0%, 100% / 0.1);
+        backdrop-filter: blur(16px);
+        transform: translateX(100%);
+        transition: transform 350ms ease-out;
+    }
+
+    .primary-nav[data-visible="true"] {
+        transform: translateX(0%);
+    }
+
+    header nav ul li {
+        font-size: 30px;
+        padding: 10px 0;
+    }
+
+    .mobile-nav-toggle {
+        display: block;
+        position: absolute;
+        z-index: 9999;
+        background-color: transparent;
+        background-image: url("../images/icon-hamburger.svg");
+        background-repeat: no-repeat;
+        width: 32px;
+        border: 0;
+        aspect-ratio: 1;
+        top: 32px;
+        right: 32px;
+    }
+
+    .mobile-nav-toggle[aria-expanded="true"] {
+        background-image: url(../images/icon-close.svg);
+    }
+}
